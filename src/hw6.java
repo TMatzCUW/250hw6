@@ -1,21 +1,18 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class hw6 {
 
-public class Biblebook {
+	public static void main(String[] args) throws FileNotFoundException {
 	
-		public String name;
-		public int chapter;
-		public String desc;
 		
-		public Biblebook(String name, int chapter, String desc){
-			this.name=name;
-			this.chapter=chapter;
-			this.desc=desc;
+		Scanner input=new Scanner(new File(System.getProperty("user.dir") + "/src/BibleBooks"));
+		while (input.hasNext()) {
+			System.out.println(input.nextLine());
 		}
+		input.close();
 		
-		public void display() {
-			System.out.println(this.name+" has "+this.chapter+" chapters and is "+this.desc+".");
-		}
 	}
 
 }
